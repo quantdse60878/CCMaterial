@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Add new name</h1>
+    <div class="form-group">
+        <input class="form-control" type="text" name="txtName" id="txtName"/>
+        <button id="btnSend" class="btn btn-primary">Send</button>
+    </div>
+
+    <div class="row">
+        <table id="nameTable" class="table-bordered text-center">
+            <thead>
+                <tr>
+                    <td style="width=200px">#</td>
+                    <td style="width=200px">Name</td>
+                </tr>
+            </thead>
+            <tbody id="bodyContent"></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $("#btnSend").click(function () {
+        var name = $("#txtName").val();
+        if (name.length == 0) {
+            alert("Not allow null");
+            return;
+        }
+        $.ajax({
+            url: '@Url.Action("CreateName", "Home")',
+            type: 'POST',
+            data: { name: name },
+            success: function (respond) {
+                alert("OK");
+            },
+            error: function () {
+                alert("FAIL");
+            }
+        });
+    });
+
+
+    function getNames() {
+        console.log("-- refresh data");
+        $.ajax({
+            url: '@Url.Action("Names", "Home")',
+            type: "GET",
+            success: function (result) {
+                var $bodyContent = $("#bodyContent");
+                var content = "";
+                var count = 1;
+                if (result != null) {
+                    $.each(result.dataList, function (index, value) {
+                        content +=  '<tr>' + '<td>' + count++ + '</td>'
+                        + '<td>' + value + '</td>' + '</tr>'
+                    });
+                }
+                $bodyContent.html('');
+                $bodyContent.html(content);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        //setInterval(getNames, 2333);
+    });
+
+</script>
