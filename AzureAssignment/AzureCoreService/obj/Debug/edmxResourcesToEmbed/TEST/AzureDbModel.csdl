@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AzureFinalAssignmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ad">
+    <Key>
+      <PropertyRef Name="AdId" />
+    </Key>
+    <Property Name="AdId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="ImageURL" Type="String" MaxLength="2083" FixedLength="false" Unicode="true" />
+    <Property Name="ThumbnailURL" Type="String" MaxLength="2083" FixedLength="false" Unicode="true" />
+    <Property Name="PostedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Category" Type="Int32" />
+    <Property Name="Phone" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Keyword">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KeywordStr" Type="Int32" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Html" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="News_Keyword">
+    <Key>
+      <PropertyRef Name="IdNews" />
+      <PropertyRef Name="IdKeyword" />
+    </Key>
+    <Property Name="IdNews" Type="Int32" Nullable="false" />
+    <Property Name="IdKeyword" Type="Int32" Nullable="false" />
+    <Property Name="TF" Type="Double" />
+    <Property Name="TFIDF" Type="Double" />
+  </EntityType>
+  <EntityContainer Name="AzureFinalAssignmentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ad" EntityType="Self.Ad" />
+    <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="Keyword" EntityType="Self.Keyword" />
+    <EntitySet Name="News" EntityType="Self.News" />
+    <EntitySet Name="News_Keyword" EntityType="Self.News_Keyword" />
+  </EntityContainer>
+</Schema>

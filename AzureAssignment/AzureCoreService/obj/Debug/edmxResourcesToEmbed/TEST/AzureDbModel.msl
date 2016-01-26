@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AzureFinalAssignmentModelStoreContainer" CdmEntityContainer="AzureFinalAssignmentEntities">
+    <EntitySetMapping Name="Ad">
+      <EntityTypeMapping TypeName="AzureFinalAssignmentModel.Ad">
+        <MappingFragment StoreEntitySet="Ad">
+          <ScalarProperty Name="AdId" ColumnName="AdId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+          <ScalarProperty Name="ThumbnailURL" ColumnName="ThumbnailURL" />
+          <ScalarProperty Name="PostedDate" ColumnName="PostedDate" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="AzureFinalAssignmentModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Keyword">
+      <EntityTypeMapping TypeName="AzureFinalAssignmentModel.Keyword">
+        <MappingFragment StoreEntitySet="Keyword">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="KeywordStr" ColumnName="KeywordStr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="AzureFinalAssignmentModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Html" ColumnName="Html" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News_Keyword">
+      <EntityTypeMapping TypeName="AzureFinalAssignmentModel.News_Keyword">
+        <MappingFragment StoreEntitySet="News_Keyword">
+          <ScalarProperty Name="IdNews" ColumnName="IdNews" />
+          <ScalarProperty Name="IdKeyword" ColumnName="IdKeyword" />
+          <ScalarProperty Name="TF" ColumnName="TF" />
+          <ScalarProperty Name="TFIDF" ColumnName="TFIDF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
