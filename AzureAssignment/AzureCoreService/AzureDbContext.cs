@@ -29,6 +29,8 @@ namespace AzureCoreService
 
         public virtual DbSet<News> News { get; set; }
 
-        public virtual DbSet<NewsKeyword> NewsKeyword { get; set; } 
+        public virtual DbSet<NewsKeyword> NewsKeyword { get; set; }
+
+        public virtual DbSet<Topic> Topic { get; set; }
     }
 }

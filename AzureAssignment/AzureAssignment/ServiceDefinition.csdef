@@ -15,9 +15,10 @@
       <InputEndpoint name="Endpoint1" protocol="http" port="80" />
     </Endpoints>
   </WebRole>
-  <WorkerRole name="WorkerRole1" vmsize="Small">
+  <WorkerRole name="VnExpressCrawler" vmsize="Small">
     <ConfigurationSettings>
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
+      <Setting name="AzureDbConnection"/>
     </ConfigurationSettings>
   </WorkerRole>
 </ServiceDefinition>

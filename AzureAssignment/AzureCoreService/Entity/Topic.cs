@@ -8,25 +8,16 @@ using System.Threading.Tasks;
 
 namespace AzureCoreService.Entity
 {
-    [Table("News")]
-    public class News
+    [Table("dbo.Topic")]
+    public class Topic
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public int? Category { get; set; }
+        public String Name { get; set; }
 
-        [StringLength(255)]
-        public string Title { get; set; }
+        public String Link { get; set; }
 
-        [Column(TypeName = "ntext")]
-        public string Text { get; set; }
-
-        [Column(TypeName = "ntext")]
-        public string Html { get; set; }
-
-        [StringLength(255)]
-        public string Link { get; set; }
     }
 }

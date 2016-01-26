@@ -57,6 +57,11 @@ namespace AzureCoreService.Repository
             dbSet.Add(entity);
         }
 
+        public virtual void InsertMore(IEnumerable<TEntity> entities)
+        {
+            dbSet.AddRange(entities);
+        }
+
         public virtual void Delete(object id)
         {
             var entityToDelete = dbSet.Find(id);
@@ -80,12 +85,7 @@ namespace AzureCoreService.Repository
 
         public virtual void Save()
         {
-            if (dbSet != null)
-            {
-                Console.WriteLine("Size" + dbSet.Count());
-            }
             context.SaveChanges();
-            context.Dispose();
         }
     }
 }

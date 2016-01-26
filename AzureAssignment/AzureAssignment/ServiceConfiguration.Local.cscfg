@@ -6,10 +6,11 @@
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
     </ConfigurationSettings>
   </Role>
-  <Role name="WorkerRole1">
+  <Role name="VnExpressCrawler">
     <Instances count="1" />
     <ConfigurationSettings>
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="AzureDbConnection" value = "Data Source=QUANTDSE60878\SQLEXPRESS; Initial Catalog=AzureFinalAssignment; user id=sa; password =123456; Integrated Security=True; MultipleActiveResultSets=True;"/>
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>

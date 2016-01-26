@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRole1", "WebRole1\WebRol
 		{DF83A6BA-D638-413D-BB5D-4E4CD25046E8} = {DF83A6BA-D638-413D-BB5D-4E4CD25046E8}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerRole1", "WorkerRole1\WorkerRole1.csproj", "{A7748ED9-B47C-4CA6-BAFA-41A580F80CF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VnExpressCrawler", "WorkerRole1\VnExpressCrawler.csproj", "{A7748ED9-B47C-4CA6-BAFA-41A580F80CF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureCoreService", "AzureCoreService\AzureCoreService.csproj", "{DF83A6BA-D638-413D-BB5D-4E4CD25046E8}"
 EndProject
